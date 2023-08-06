@@ -4,7 +4,7 @@ const port = 3000
 
 // Conexion a base de datos
 
-const moongose = require("mongoose")
+const mongoose = require("mongoose")
 mongoose.connect('mongodb+srv://umacankar9:umitabb123@myapi-database.2e8w7qc.mongodb.net/?retryWrites=true&w=majority')
 .then(() => console.log("Base de datos conectada"))
 .catch(e => console.log(e))
