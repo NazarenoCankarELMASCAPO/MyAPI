@@ -6,7 +6,7 @@ const port = 3000;
 const mongoose = require("mongoose");
 mongoose
   .connect(
-    'mongodb+srv://umacankar9:umitabb123@myapi-database.2e8w7qc.mongodb.net/mydbname?retryWrites=true&w=majority',
+    'mongodb+srv://umacankar9:umitabb123@myapi-database.2e8w7qc.mongodb.net/matepreguntas?retryWrites=true&w=majority',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true
