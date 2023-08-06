@@ -12,7 +12,7 @@ mongoose.connect('mongodb+srv://umacankar9:umitabb123@myapi-database.2e8w7qc.mon
 //
 
 app.get("/", (req, res) => {
-    res.send("WOrks")
+    res.send("Works")
 })
 
 app.listen(port, () => {
