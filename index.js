@@ -9,7 +9,7 @@ mongoose.connect('mongodb+srv://umacankar9:umitabb123@myapi-database.2e8w7qc.mon
 .then(() => console.log("Base de datos conectada"))
 .catch(e => console.log(e))
 
-const User = require("./models/userjs")
+const User = require("./models/user.js")
 //
 
 app.get("/", (req, res) => {
