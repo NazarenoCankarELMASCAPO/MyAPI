@@ -12,12 +12,8 @@ mongoose.connect('mongodb+srv://umacankar9:umitabb123@myapi-database.2e8w7qc.mon
 //
 
 app.get("/", (req, res) => {
-    res.status(200).json({
-        msg: "mensaje"
-    });
+    res.send("WOrks")
 })
-
-app.use(express.json())
 
 app.listen(port, () => {
     console.log(`Funcionando en ${port}`)
