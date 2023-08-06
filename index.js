@@ -22,3 +22,5 @@ app.use(express.json())
 app.listen(port, () => {
     console.log(`Funcionando en ${port}`)
 })
+
+console.log(`http://localhost:${port}`)
