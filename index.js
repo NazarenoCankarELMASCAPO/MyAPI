@@ -17,6 +17,8 @@ app.get("/", (req, res) => {
     });
 })
 
+app.use(express.json())
+
 app.listen(port, () => {
     console.log(`Funcionando en ${port}`)
 })
