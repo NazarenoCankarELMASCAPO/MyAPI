@@ -30,8 +30,8 @@ app.get("/users", (req, res) => {
     .then(users => {
       res.json(users);
     })
-    .catch(error => {
-      res.status(500).json({ error: "Error al recuperar usuarios", message: error });
+    .catch(e => {
+      res.status(500).json({ error: "Error al recuperar usuarios", message: e });
     });
 });
 
