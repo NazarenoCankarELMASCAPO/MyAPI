@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
   });
 });
 
+
 app.get("/users", (req, res) => {
   User.find()
     .then(users => {
@@ -32,6 +33,27 @@ app.get("/users", (req, res) => {
     })
     .catch(e => {
       res.send(e)
+    });
+});
+
+app.post("/users", (req, res) => {
+    const { name, score } = req.body;
+  
+    if (!name || !score) {
+      return res.status(400).json({ error: "Se requieren name y score para crear un usuario" });
+    }
+  
+    const newUser = new User({
+      name,
+      score
+    });
+  
+    newUser.save()
+    .then(savedUser => {
+        res.status(201).json(savedUser);
+    })
+    .catch(error => {
+        res.status(500).json({ error: "Error al guardar el usuario en la base de datos" });
     });
 });
 
