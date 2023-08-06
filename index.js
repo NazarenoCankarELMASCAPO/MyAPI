@@ -21,7 +21,7 @@ app.use(express.json()); // Middleware para manejar datos JSON en solicitudes
 
 app.get("/", (req, res) => {
   res.json({
-    message: "It works"
+    message: "It really works but"
   });
 });
 
