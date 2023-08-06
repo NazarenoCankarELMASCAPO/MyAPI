@@ -9,11 +9,22 @@ mongoose.connect('mongodb+srv://umacankar9:umitabb123@myapi-database.2e8w7qc.mon
 .then(() => console.log("Base de datos conectada"))
 .catch(e => console.log(e))
 
+const User = require("./models/userjs")
 //
 
 app.get("/", (req, res) => {
     res.json({
-        message: "Works"
+        message: "It works"
+    })
+})
+
+app.get("/users", (req, res) => {
+    User.find()
+    .then(users => {
+        res.json(users)
+    })
+    .catch(e => {
+        res.status(500).json({ error: "Error al recuperar usuarios" });
     })
 })
 
