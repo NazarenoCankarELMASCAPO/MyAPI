@@ -6,6 +6,6 @@ const userSchema = new Schema({
     score: Number
 })
 
-const user = new mongoose.model("User", userSchema)
+const user = new mongoose.model("ranking", userSchema)
 
 module.exports = user
