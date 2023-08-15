@@ -78,14 +78,16 @@ app.get("/tex7", (req, res) => {
 })
 
 app.post("/tex7", (req, res) => {
-  const { mail, password, name } = req.body
-  if(!mail || !password || !name) {
+  const { mail, password, name, profilePic, aboutMe } = req.body
+  if(!mail || !password || !name || !profilePic || !aboutMe) {
     return res.status(400).json({ error: "Todos los campos deben estar completos"})
   }
   const newUserTeX7 = new UserTeX7({
     mail,
     password,
-    name
+    name,
+    profilePic,
+    aboutMe
   })
 
   newUserTeX7.save()
