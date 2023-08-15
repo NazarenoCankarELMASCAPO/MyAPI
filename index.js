@@ -23,6 +23,7 @@ mongoose
   .catch(error => console.error("Error de conexión:", error));
 
 const User = require("./models/user.js");
+const UserTeX7 = require("./models/userTeX7.js");
 
 app.use(express.json()); // Middleware para manejar datos JSON en solicitudes
 
@@ -64,7 +65,37 @@ app.post("/users", (req, res) => {
     });
 });
 
-// Ruta para crear un nuevo usuario (por implementar)
+// TeX7
+
+app.get("/tex7", (req, res) => {
+  UserTeX7.find()
+  .then(users => {
+    res.json(users)
+  })
+  .catch(e => {
+    res.send(e)
+  })
+})
+
+app.post("/tex7", (req, res) => {
+  const { mail, password, name } = req.body
+  if(!mail || !password || !name) {
+    return res.status(400).json({ error: "Todos los campos deben estar completos"})
+  }
+  const newUserTeX7 = new UserTeX7({
+    mail,
+    password,
+    name
+  })
+
+  newUserTeX7.save()
+  .then(savedUser => {
+    res.status(201).json(savedUser)
+  })
+  .catch(e => {
+    res.status(500).json({ error: "Error al guardar usuario en base de datos" })
+  }) 
+})
 
 app.listen(port, () => {
   console.log(`Funcionando en ${port}`);
